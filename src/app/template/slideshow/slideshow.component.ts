@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-slideshow',
   templateUrl: './slideshow.component.html',
   styleUrls: ['./slideshow.component.scss']
 })
-export class SlideshowComponent implements OnInit {
+export class SlideshowComponent implements OnInit, OnDestroy {
 
   slides = ['assets/confidentiel.jpg', 'assets/contact-bg.jpg', 'assets/home-bg.jpg'];
 
   currentSlideIndex = 0;
   slideInterval: any;
+  isSlideShowRunning = true;
 
   ngOnInit(): void {
     this.startSlideShow();
@@ -20,6 +21,12 @@ export class SlideshowComponent implements OnInit {
     this.slideInterval = setInterval(() => {
       this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
     }, 5000);
+    this.isSlideShowRunning = true;
+  }
+
+  stopSlideShow(): void {
+    clearInterval(this.slideInterval);
+    this.isSlideShowRunning = false;
   }
 
   ngOnDestroy(): void {
@@ -27,18 +34,27 @@ export class SlideshowComponent implements OnInit {
   }
 
   prevSlide(): void {
-    clearInterval(this.slideInterval); // Stop the slideshow
+    this.stopSlideShow();
     this.currentSlideIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
   }
-
+  
   nextSlide(): void {
-    clearInterval(this.slideInterval); // Stop the slideshow
+    this.stopSlideShow();
     this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
   }
 
   goToSlide(index: number): void {
     clearInterval(this.slideInterval);
     this.currentSlideIndex = index;
-   // this.stopSlideShow(); // Stop the slideshow when a dot is clicked
+    this.isSlideShowRunning = false;
   }
+
+  getProgressBarAnimation(index: number): string {
+    if (index === this.currentSlideIndex && this.isSlideShowRunning) {
+      return 'progressBar 5s linear infinite';
+    }
+    return 'none';
+  }
+  
+  
 }
