@@ -1,5 +1,8 @@
 <div class="slideshow">
-  <img [src]="slides[currentSlideIndex]" alt="">
+  <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlideIndex">
+    <img [src]="slide.url" alt="">
+    <div class="slide-text">{{slide.text}}</div>
+  </div>
   <button class="arrow prev" (click)="prevSlide()">&#10094;</button>
   <button class="arrow next" (click)="nextSlide()">&#10095;</button>
   <div class="dots">

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./residentielle.component.scss']
 })
 export class ResidentielleComponent {
+  selectedContent = 'item1';
 
+  changeContent(content: string) {
+    this.selectedContent = content;
+  }
 }

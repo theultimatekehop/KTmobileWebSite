@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./ia.component.scss']
 })
 export class IaComponent {
+  selectedContent = 'item1';
 
+  changeContent(content: string) {
+    this.selectedContent = content;
+  }
 }

@@ -1,0 +1,128 @@
+/* Ensure the footer stays at the bottom of the page */
+html,
+body {
+  height: 100%;
+}
+
+/* Make the app root a flex container */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Ensure content takes up all available space, pushing the footer down */
+app-root > *:not(footer) {
+  flex-grow: 1;
+}
+
+.resedentielle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 75vh;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap; /* Add this line for wrapping on smaller screens */
+  justify-content: space-between;
+  width: 100%;
+  min-height: 75vh;
+}
+
+.left-menu {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: flex-start;
+  margin-bottom: 20px; /* Add this line for spacing on smaller screens */
+}
+
+.left-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: sticky;
+  top: 0;
+}
+
+.left-menu li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.left-menu li:hover {
+  background-color: #ddd;
+}
+
+.left-menu i {
+  font-size: 2.0rem;
+  margin-right: 15px;
+}
+
+.content {
+  flex-grow: 1;
+  width: calc(100% - 250px);
+  padding: 20px;
+}
+
+.section-title {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.text-content, .image-content {
+  display: inline-block;
+  width: calc(50% - 30px);
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.text-content:nth-child(4), .image-content:nth-child(3) {
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive styles for mobile and tablet */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-menu {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .text-content,
+  .image-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text-content:nth-child(4),
+  .image-content:nth-child(3) {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+}

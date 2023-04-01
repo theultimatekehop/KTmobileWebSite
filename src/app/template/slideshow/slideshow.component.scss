@@ -78,7 +78,7 @@
 
 
 .dot.active {
-  background-color: blue;
+  background-color: black;
 }
 
 
@@ -98,5 +98,43 @@
   }
   100% {
     left: 0%;
+  }
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-text {
+  position: absolute;
+  left: 5%; // Adjust the distance from the left edge
+  top: 15%; // Adjust the distance from the top edge
+  opacity: 0;
+  font-size: 3rem;
+  color: white;
+}
+
+.slide.active .slide-text {
+  animation: slideText 2s ease forwards;
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateY(-10%); // Adjust the starting position of the animation
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

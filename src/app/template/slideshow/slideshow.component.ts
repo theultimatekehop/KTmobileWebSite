@@ -1,13 +1,27 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-slideshow',
   templateUrl: './slideshow.component.html',
-  styleUrls: ['./slideshow.component.scss']
+  styleUrls: ['./slideshow.component.scss'],
+  animations: [
+    trigger('dropDownAnimation', [
+      state('void', style({ transform: 'translateY(-100%)' })),
+      state('*', style({ transform: 'translateY(0)' })),
+      transition('void <=> *', animate('1s ease-in-out')),
+    ]),
+  ],
 })
 export class SlideshowComponent implements OnInit, OnDestroy {
 
-  slides = ['assets/confidentiel.jpg', 'assets/contact-bg.jpg', 'assets/home-bg.jpg'];
+  slides = [
+    { url: 'assets/confidentiel.jpg', text: 'Slide 1' },
+    { url: 'assets/contact-bg.jpg', text: 'Slide 2' },
+    { url: 'assets/home-bg.jpg', text: 'Slide 3' },
+  ];
+  
 
   currentSlideIndex = 0;
   slideInterval: any;

@@ -1,1 +1,128 @@
-<p>residentielle works!</p>
+<div class="resedentielle-container">
+    <div class="title-container">
+        <h2 class="section-title">Section résidentielle</h2>
+    </div>
+    <div class="main-content">
+        <nav class="left-menu">
+            <ul>
+                <li (click)="changeContent('item1')"><i class="fa fa-users"></i>IA</li>
+                <li (click)="changeContent('item2')"><i class="fa fa-home"></i>Pour les Québécois</li>
+                <li (click)="changeContent('item3')"><i class="fa fa-key"></i>Solution clé en main</li>
+            </ul>
+        </nav>
+        <div class="content">
+            <ng-container [ngSwitch]="selectedContent">
+                <div *ngSwitchCase="'item1'">
+                    <div class="text-content">
+                        <!-- Content for Item 1 -->
+                        <h2>Solution IA résidentielle</h2>
+                        <p>Notre solution IA résidentielle offre une expérience de vie intelligente pour votre maison.
+                            Nous proposons une large gamme de produits et services pour améliorer la sécurité, la
+                            commodité et l'efficacité de votre maison. Grâce à notre expertise en matière d'IA, nous
+                            pouvons créer des solutions sur mesure pour répondre à vos besoins spécifiques. Que vous
+                            cherchiez à automatiser votre éclairage, votre climatisation ou votre système de sécurité,
+                            nous pouvons vous offrir une solution adaptée à votre style de vie. Nos produits sont
+                            faciles à utiliser et peuvent être contrôlés à partir de votre téléphone intelligent ou de
+                            votre assistant vocal. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons
+                            transformer votre maison en une maison intelligente.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/residentielle/residentielle1.png" alt="Image 1 description">
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/residentielle/residentielle2.png" alt="Image 1-2 description">
+                    </div>
+                    <div class="text-content">
+                        <h2>Solution IA résidentielle</h2>
+                        <p>Nous sommes fiers d'offrir des produits et services à la fine pointe de la technologie,
+                            augmentés par l'IA. Notre équipe de professionnels qualifiés est toujours à l'affût des
+                            dernières tendances et technologies pour vous offrir des solutions innovantes qui améliorent
+                            votre qualité de vie. Nous sommes déterminés à vous fournir des outils simples à utiliser,
+                            pour que vous puissiez apprendre facilement à profiter de tous les avantages offerts par la
+                            technologie de l'IA. Nous sommes à votre disposition pour vous conseiller sur les meilleures
+                            options pour votre maison, pour vous aider à maximiser l'efficacité énergétique et
+                            économique de votre domicile. Contactez-nous dès maintenant pour en savoir plus sur notre
+                            expertise en matière d'IA et de solutions résidentielles intelligentes.</p>
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'item2'">
+                    <div class="text-content">
+                        <!-- Content for Item 2 -->
+                        <h2> Au service des Québécois</h2>
+                        <p>Nous sommes fiers de servir nos clients au Québec et de contribuer à l'amélioration de leur
+                            qualité de vie grâce à nos solutions technologiques personnalisées. Chez Kehop Technologie,
+                            nous croyons que la technologie peut améliorer tous les aspects de la vie, de la sécurité à
+                            la commodité en passant par l'efficacité énergétique. C'est pourquoi nous nous engageons à
+                            offrir des solutions de qualité supérieure à des prix compétitifs pour satisfaire les
+                            besoins de notre clientèle québécoise. Nous sommes convaincus que nos solutions
+                            technologiques peuvent aider les Québécois à vivre plus confortablement, plus efficacement
+                            et plus intelligemment.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/residentielle/residentielle3.png" alt="Image 1 description">
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/residentielle/residentielle4.png" alt="Image 1-2 description">
+                    </div>
+                    <div class="text-content">
+                        <h2>Une entreprise local</h2>
+                        <p>Kehop Technologie, votre partenaire technologique de confiance, basé localement au
+                            Québec.<br>
+
+
+
+                            Kehop Technologie est une entreprise fièrement québécoise, engagée à fournir des solutions
+                            technologiques de qualité supérieure aux particuliers et aux entreprises de la région. Nous
+                            sommes passionnés par notre travail et nous nous efforçons constamment d'offrir le meilleur
+                            service possible à nos clients. En tant qu'entreprise locale, nous comprenons les besoins
+                            uniques de notre communauté et nous sommes en mesure de fournir des solutions personnalisées
+                            pour répondre à ces besoins. En travaillant avec nous, vous êtes assuré d'avoir un
+                            partenaire technologique fiable, compétent et accessible pour répondre à tous vos besoins en
+                            matière de technologie.</p>
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'item3'">
+                    <div class="text-content">
+                        <!-- Content for Item 2 -->
+                        <h2> Des services personalisé à vos besoins</h2>
+                        <p>Chez Kehop Technologie, nous sommes convaincus que chaque client est unique et que leurs
+                            besoins technologiques le sont également. C'est pourquoi nous proposons des services
+                            personnalisés pour répondre à vos besoins spécifiques en matière de technologie. Que vous
+                            cherchiez à automatiser votre maison, à améliorer votre sécurité informatique ou à optimiser
+                            votre système informatique, nous pouvons créer une solution sur mesure qui répondra
+                            parfaitement à vos besoins. Notre équipe expérimentée vous accompagnera tout au long du
+                            processus, en vous fournissant des conseils d'experts et un service personnalisé pour vous
+                            aider à atteindre vos objectifs. Contactez-nous dès aujourd'hui pour découvrir comment nous
+                            pouvons vous aider à réaliser vos projets de technologie.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/residentielle/residentielle5.png" alt="Image 1 description">
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/residentielle/residentielle6.png" alt="Image 1-2 description">
+                    </div>
+                    <div class="text-content">
+                        <h2>Une entreprise local</h2>
+                        <p>Kehop Technologie, votre partenaire technologique de confiance, basé localement au
+                            Québec.<br>
+
+
+
+                            Kehop Technologie est une entreprise fièrement québécoise, engagée à fournir des solutions
+                            technologiques de qualité supérieure aux particuliers et aux entreprises de la région. Nous
+                            sommes passionnés par notre travail et nous nous efforçons constamment d'offrir le meilleur
+                            service possible à nos clients. En tant qu'entreprise locale, nous comprenons les besoins
+                            uniques de notre communauté et nous sommes en mesure de fournir des solutions personnalisées
+                            pour répondre à ces besoins. En travaillant avec nous, vous êtes assuré d'avoir un
+                            partenaire technologique fiable, compétent et accessible pour répondre à tous vos besoins en
+                            matière de technologie.</p>
+                    </div>
+                </div>
+
+                <!-- Add more content sections as needed -->
+            </ng-container>
+        </div>
+    </div>
+</div>

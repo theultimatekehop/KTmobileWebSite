@@ -1,1 +1,130 @@
-<p>commercial works!</p>
+<div class="resedentielle-container">
+    <div class="title-container">
+        <h2 class="section-title">Section Commercial</h2>
+    </div>
+    <div class="main-content">
+        <nav class="left-menu">
+            <ul>
+                <li (click)="changeContent('item1')"><i class="fa fa-microchip"></i>Outils IA disponible</li>
+                <li (click)="changeContent('item2')"><i class="fa fa-handshake-o"></i>Services personalisé</li>
+                <li (click)="changeContent('item3')"><i class="fa fa-book"></i>Guide en français</li>
+            </ul>
+        </nav>
+        <div class="content">
+            <ng-container [ngSwitch]="selectedContent">
+                <div *ngSwitchCase="'item1'">
+                    <div class="text-content">
+                        <!-- Content for Item 1 -->
+                        <h2>Outils IA disponible</h2>
+                        <p>Chez Kehop Technologie, nous sommes passionnés par les dernières avancées technologiques,
+                            notamment en matière d'intelligence artificielle (IA). Nous pouvons vous conseiller sur les
+                            différents outils d'IA disponibles sur le marché,
+                            afin que vous puissiez choisir ceux qui répondent le mieux à vos besoins. Que vous cherchiez
+                            à automatiser votre domicile ou votre entreprise, à améliorer votre sécurité informatique ou
+                            à optimiser vos processus d'affaires,
+                            nous pouvons vous aider à trouver les outils les plus adaptés pour vous. Contactez-nous dès
+                            aujourd'hui pour en savoir plus sur les différentes options disponibles en matière d'IA.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/commercial/ai12.jpg" alt="Image 1 description">
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/commercial/ai15.jpg" alt="Image 1-2 description">
+                    </div>
+                    <div class="text-content">
+                        <h2>Solution IA commercial</h2>
+                        <p>Notre solution IA pour le secteur commercial offre des avantages concurrentiels pour votre
+                            entreprise. Nous proposons une gamme complète de solutions pour améliorer l'efficacité, la
+                            productivité et la sécurité de votre entreprise.
+                            Grâce à notre expertise en IA, nous pouvons créer des solutions sur mesure pour répondre aux
+                            besoins spécifiques de votre entreprise. Que vous cherchiez à automatiser vos processus, à
+                            améliorer votre gestion des données ou à augmenter
+                            la sécurité de votre entreprise, nous pouvons vous offrir une solution adaptée à votre
+                            entreprise. Nos produits sont faciles à utiliser et peuvent être contrôlés à partir de votre
+                            ordinateur ou de votre appareil mobile. Contactez-nous
+                            dès aujourd'hui pour découvrir comment nous pouvons transformer votre entreprise en une
+                            entreprise intelligente.</p>
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'item2'">
+                    <div class="text-content">
+                        <!-- Content for Item 2 -->
+                        <h2> Services personalisé</h2>
+                        <p>Nous sommes fiers de servir nos clients au Québec et de contribuer à l'amélioration de leur
+                            qualité de vie grâce à nos solutions technologiques personnalisées. Chez Kehop Technologie,
+                            nous croyons que la technologie peut améliorer tous les aspects de la vie, de la sécurité à
+                            la commodité en passant par l'efficacité énergétique. C'est pourquoi nous nous engageons à
+                            offrir des solutions de qualité supérieure à des prix compétitifs pour satisfaire les
+                            besoins de notre clientèle québécoise. Nous sommes convaincus que nos solutions
+                            technologiques peuvent aider les Québécois à vivre plus confortablement, plus efficacement
+                            et plus intelligemment.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/commercial/tech3.jpg" alt="Image 1 description">
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/commercial/tech2.jpg" alt="Image 1-2 description">
+                    </div>
+                    <div class="text-content">
+                        <h2>Des outils pour tous</h2>
+                        <p>Kehop Technologie, votre partenaire technologique de confiance, basé localement au
+                            Québec.<br>
+
+
+
+                            Kehop Technologie est une entreprise fièrement québécoise, engagée à fournir des solutions
+                            technologiques de qualité supérieure aux particuliers et aux entreprises de la région. Nous
+                            sommes passionnés par notre travail et nous nous efforçons constamment d'offrir le meilleur
+                            service possible à nos clients. En tant qu'entreprise locale, nous comprenons les besoins
+                            uniques de notre communauté et nous sommes en mesure de fournir des solutions personnalisées
+                            pour répondre à ces besoins. En travaillant avec nous, vous êtes assuré d'avoir un
+                            partenaire technologique fiable, compétent et accessible pour répondre à tous vos besoins en
+                            matière de technologie.</p>
+                    </div>
+                </div>
+
+                <div *ngSwitchCase="'item3'">
+                    <div class="text-content">
+                        <!-- Content for Item 2 -->
+                        <h2> Guide en français</h2>
+                        <p>Chez Kehop Technologie, nous savons que chaque client est unique et que leurs besoins
+                            technologiques le sont également. C'est pourquoi nous offrons des services personnalisés
+                            pour répondre à vos besoins spécifiques en matière de technologie. Nous croyons que la
+                            communication est la clé du succès, c'est pourquoi nous offrons également des guides en
+                            français pour nos produits et services. Que vous cherchiez à automatiser votre maison, à
+                            améliorer votre sécurité informatique ou à optimiser votre système informatique, nous sommes
+                            là pour vous aider. Nous sommes fiers d'offrir des solutions technologiques de qualité
+                            supérieure aux particuliers et aux entreprises du Québec. Contactez-nous dès aujourd'hui
+                            pour en savoir plus sur nos guides en français et sur la façon dont nous pouvons vous aider
+                            à atteindre vos objectifs technologiques.</p>
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/commercial/quebec-flag.jpg" alt="Image 1 description">
+                    </div>
+                    <div class="image-content">
+                        <img src="assets/commercial/quebec.jpg" alt="Image 1-2 description">
+                    </div>
+                    <div class="text-content">
+                        <h2>Une entreprise local</h2>
+                        <p>Kehop Technologie, votre partenaire technologique de confiance, basé localement au
+                            Québec.<br>
+
+
+
+                            Kehop Technologie est une entreprise fièrement québécoise, engagée à fournir des solutions
+                            technologiques de qualité supérieure aux particuliers et aux entreprises de la région. Nous
+                            sommes passionnés par notre travail et nous nous efforçons constamment d'offrir le meilleur
+                            service possible à nos clients. En tant qu'entreprise locale, nous comprenons les besoins
+                            uniques de notre communauté et nous sommes en mesure de fournir des solutions personnalisées
+                            pour répondre à ces besoins. En travaillant avec nous, vous êtes assuré d'avoir un
+                            partenaire technologique fiable, compétent et accessible pour répondre à tous vos besoins en
+                            matière de technologie.</p>
+                    </div>
+                </div>
+
+                <!-- Add more content sections as needed -->
+            </ng-container>
+        </div>
+    </div>
+</div>

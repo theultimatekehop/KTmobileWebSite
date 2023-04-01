@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./commercial.component.scss']
 })
 export class CommercialComponent {
+  selectedContent = 'item1';
 
+  changeContent(content: string) {
+    this.selectedContent = content;
+  }
 }
