@@ -45,9 +45,11 @@ export class SlideshowComponent implements OnInit, OnDestroy {
 
   goToSlide(index: number): void {
     clearInterval(this.slideInterval);
+    //this.stoppedSlides[this.currentSlideIndex] = true;
     this.currentSlideIndex = index;
     this.isSlideShowRunning = false;
   }
+  
 
   getProgressBarAnimation(index: number): string {
     if (index === this.currentSlideIndex && this.isSlideShowRunning) {

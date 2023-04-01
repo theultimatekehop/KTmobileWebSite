@@ -3,7 +3,7 @@
   <button class="arrow prev" (click)="prevSlide()">&#10094;</button>
   <button class="arrow next" (click)="nextSlide()">&#10095;</button>
   <div class="dots">
-    <button *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" [style.animation]="getProgressBarAnimation(i)" (click)="goToSlide(i)"></button>
+    <button *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" [class.stopped]="!isSlideShowRunning" [style.animation]="(i === currentSlideIndex && isSlideShowRunning) ? getProgressBarAnimation(i) : ''" (click)="goToSlide(i)"></button>
 
 
   </div>
