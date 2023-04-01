@@ -1,0 +1,58 @@
+<!-- <div class="slideshow-container">
+    <div
+      *ngFor="let slide of slides; let i = index"
+      [@slideAnimation]="slide.state"
+      class="slide"
+      [ngStyle]="{
+        'background-image': 'linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%), url(' +
+        slide.bg +
+        ')'
+      }"
+      (click)="goToPage(slide, $event)"
+      (swipeleft)="nextSlide(true)"
+      (swiperight)="prevSlide(true)"
+    >
+      <div class="slide-text-container">
+        <h1 [@titleAnimation]="slide.textState" class="slide-title">{{slide.customTitle}}</h1>
+        <p [@subtitleAnimation]="slide.subtitleState" class="slide-subtitle">{{slide.customSubtitle}}</p>
+      </div>
+    </div>
+  
+    <div class="controls">
+      <a class="arrow prev" (click)="prevSlide(true)">&#10094;</a>
+      <a class="arrow next" (click)="nextSlide(true)">&#10095;</a>
+    </div>
+  
+    <div class="dots">
+      <span
+        *ngFor="let slide of slides; let i = index"
+        class="dot"
+        [ngClass]="{ active: i === currentIndex }"
+        (click)="goToSlide(i)"
+      ></span>
+    </div>
+  
+    <button *ngIf="showRestartButton" class="restart-btn" (click)="restartSlideshow()">Restart Slideshow</button>
+  </div>
+   -->
+<!--    <div class="slideshow-container">
+    <div *ngFor="let slide of slides; let i = index" [@slideAnimation]="slide.state" (click)="goToPage(slide, $event)" [style.background-image]="'url(' + slide.bg + ')'">
+      <div class="slide-text" [@titleAnimation]="slide.textState">{{slide.customTitle}}</div>
+      <div class="slide-subtitle" [@subtitleAnimation]="slide.subtitleState">{{slide.customSubtitle}}</div>
+    </div>
+    <div class="slide-controls">
+      <button (click)="prevSlide(true)">Previous</button>
+      <button (click)="nextSlide(true)">Next</button>
+      <button *ngIf="showRestartButton" (click)="restartSlideshow()">Restart Slideshow</button>
+    </div>
+  </div>
+   -->
+   <div class="slideshow">
+    <img *ngFor="let slide of slides; let i = index"
+         [src]="slide"
+         [style.z-index]="i === currentSlideIndex ? 1 : 0"
+         alt="">
+    <button class="arrow prev" (click)="prevSlide()">&#10094;</button>
+    <button class="arrow next" (click)="nextSlide()">&#10095;</button>
+  </div>
+  

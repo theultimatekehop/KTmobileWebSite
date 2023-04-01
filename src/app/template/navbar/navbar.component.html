@@ -1,0 +1,20 @@
+<!-- app-navbar.component.html -->
+<div class="navbar">
+  <div class="navbar-left">
+    <a [routerLink]="['/']">{{ 'HOME' | translate }}</a>
+    <ng-container *ngFor="let segment of currentRoute; let i = index">
+      <span class="separator">&gt;</span>
+      <a [routerLink]="currentRoute.slice(0, i + 1)">{{ getRouteTitle(segment) }}</a>
+    </ng-container>
+  </div>
+  <div class="navbar-right">
+    <a href="tel:+1234567890" class="phone">
+      <i class="fas fa-phone"></i>
+      +1 (234) 567-8909
+    </a>
+    <a href="mailto:info@example.com" class="email">
+      <i class="fas fa-envelope"></i>
+      info@example.com
+    </a>
+  </div>
+</div>

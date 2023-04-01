@@ -1,0 +1,37 @@
+<header>
+
+    <button class="mobile-menu-toggle" [ngClass]="{ 'open': mobileMenuOpen }" (click)="toggleMobileMenu()">
+        <span class="menu-icon"></span>
+    </button>
+
+    <div class="logo">
+        <h1>KTmobileWebSite</h1>
+    </div>
+
+    <nav class="desktop-menu">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ 'HOME' | translate}}</a>
+        <a routerLink="/ia" routerLinkActive="active">{{ 'AI' | translate }}</a>
+        <a routerLink="/commercial" routerLinkActive="active">{{ 'COMMERCIAL' | translate }}</a>
+        <a routerLink="/residentielle" routerLinkActive="active">{{ 'RESIDENTIAL' | translate }}</a>
+        <a routerLink="/about" routerLinkActive="active">{{ 'ABOUT' | translate }}</a>
+        <a routerLink="/faq" routerLinkActive="active">{{ 'FAQ' | translate }}</a>
+        <a routerLink="/contactus" routerLinkActive="active">{{ 'CONTACTUS' | translate }}</a>
+        <a href="#" (click)="switchLanguage(); $event.preventDefault()">{{ oppositeLanguage }}</a>
+
+    </nav>
+</header>
+<div class="mobile-menu-overlay" [ngClass]="{ 'open': mobileMenuOpen }" (click)="toggleMobileMenu()"></div>
+<aside class="mobile-menu" [ngClass]="{ 'open': mobileMenuOpen }">
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+         (click)="toggleMobileMenu()">{{ 'HOME' | translate }}</a>
+      <a routerLink="/ia" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'AI' | translate }}</a>
+      <a routerLink="/commercial" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'COMMERCIAL' | translate }}</a>
+      <a routerLink="/residentielle" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'RESIDENTIAL' | translate }}</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'ABOUT' | translate }}</a>
+      <a routerLink="/faq" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'FAQ' | translate }}</a>
+      <a routerLink="/contactus" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'CONTACTUS' | translate }}</a>
+      <a href="#" (click)="switchLanguage(); $event.preventDefault()">{{ oppositeLanguage }}</a>
+
+    </nav>
+  </aside>
