@@ -48,11 +48,12 @@
   </div>
    -->
    <div class="slideshow">
-    <img *ngFor="let slide of slides; let i = index"
-         [src]="slide"
-         [style.z-index]="i === currentSlideIndex ? 1 : 0"
-         alt="">
+    <img *ngFor="let slide of slides; let i = index" [src]="slide" [style.z-index]="i === currentSlideIndex ? 1 : 0" alt="">
     <button class="arrow prev" (click)="prevSlide()">&#10094;</button>
     <button class="arrow next" (click)="nextSlide()">&#10095;</button>
+    <div class="dots">
+      <button *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" (click)="goToSlide(i)"></button>
+    </div>
   </div>
+  
   

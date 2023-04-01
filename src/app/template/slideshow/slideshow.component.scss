@@ -105,7 +105,7 @@
 }
  */
 
- /* 
+/* 
  .slideshow-container {
   position: relative;
   width: 100%;
@@ -167,7 +167,7 @@ button {
 .slideshow {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -191,7 +191,15 @@ button {
   cursor: pointer;
   outline: none;
   font-size: 2rem;
+  height: 50%;
   z-index: 2;
+}
+
+.arrow:hover {
+  font-size: 2.5rem; // Increase the font-size on hover
+  transition: font-size 0.3s; // Add a transition for a smooth zoom effect
+  height: 60%;
+  transition: height 0.3s;
 }
 
 .prev {
@@ -201,3 +209,32 @@ button {
 .next {
   right: 10px;
 }
+
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2; // Add this line to place the dots above the images
+}
+
+.dot {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.8; // Add this line to make the dots slightly transparent
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 1; // Add this line to make the active dot fully visible
+}
+
+// ...
