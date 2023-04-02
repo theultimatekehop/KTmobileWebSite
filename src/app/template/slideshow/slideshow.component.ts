@@ -17,7 +17,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class SlideshowComponent implements OnInit, OnDestroy {
 
   slides = [
-    { url: 'assets/confidentiel.jpg', text: 'Slide 1' },
+    { url: 'assets/home-bg.jpg', text: 'Slide 1' },
     { url: 'assets/contact-bg.jpg', text: 'Slide 2' },
     { url: 'assets/home-bg.jpg', text: 'Slide 3' },
   ];

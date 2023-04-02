@@ -18,7 +18,7 @@ export class NavbarComponent {
     'residentielle': { en: 'Residiential', fr: 'Résidentielle' },
     'about': { en: 'About', fr: 'À propos' },
     'faq': { en: 'FAQ', fr: 'FAQ' },
-    'contactus': { en: 'Contact us', fr: 'Contactez-nous' },
+    'contactus': { en: 'Contact us', fr: 'Contact' },
   };
   
 

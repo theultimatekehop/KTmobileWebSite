@@ -1,0 +1,16 @@
+<h2 class="services-header">Plusieurs services de solution commercial</h2>
+<div class="services-slider">
+  <div class="arrow prev" (click)="prevService()">&#10094;</div>
+  <div class="services-container">
+    <a *ngFor="let service of services; let i = index"
+        [ngStyle]="{ 'transform': 'translateX(' + (-100 * currentServiceIndex) + '%)' }"
+        [routerLink]="service.link" class="service-link">
+      <div class="service">
+        <img [src]="service.img" alt="{{ service.name }}" class="service-image" />
+        <h3>{{ service.name }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </a>
+  </div>
+  <div class="arrow next" (click)="nextService()">&#10095;</div>
+</div>

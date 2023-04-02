@@ -20,6 +20,12 @@ import { BreadcrumbComponent } from './template/breadcrumb/breadcrumb.component'
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SlideshowComponent } from './template/slideshow/slideshow.component';
+import { FormsModule } from '@angular/forms';
+import { CommercialSliderComponent } from './template/slider/commercial-slider/commercial-slider.component';
+import { IaSliderComponent } from './template/slider/ia-slider/ia-slider.component';
+import { ResidentialSliderComponent } from './template/slider/residential-slider/residential-slider.component';
+import { FooterComponent } from './template/footer/footer.component';
+
 
 
 
@@ -43,10 +49,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     BreadcrumbComponent,
     NavbarComponent,
     SlideshowComponent,
+    CommercialSliderComponent,
+    IaSliderComponent,
+    ResidentialSliderComponent,
+    FooterComponent,
     
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     FontAwesomeModule,
     AppRoutingModule,
     BrowserAnimationsModule,

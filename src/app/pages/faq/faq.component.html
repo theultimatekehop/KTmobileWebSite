@@ -1,1 +1,14 @@
-<p>faq works!</p>
+<div class="faq-container">
+    <h2 class="faq-title">Foire aux questions</h2>
+    <div class="faq-item" *ngFor="let question of questions">
+      <div class="question" (click)="toggleAnswer(question)">
+        <span>{{ question.text }}</span>
+        <i class="fas" [ngClass]="{'fa-chevron-down': !question.open, 'fa-chevron-up': question.open}"></i>
+
+      </div>
+      <div class="answer" *ngIf="question.open">
+        <p>{{ question.answer }}</p>
+      </div>
+    </div>
+  </div>
+  

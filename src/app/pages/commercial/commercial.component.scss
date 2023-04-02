@@ -100,7 +100,7 @@ app-root > *:not(footer) {
 }
 
 /* Responsive styles for mobile and tablet */
-@media (max-width: 768px) {
+@media (max-width: 1212px) {
   .main-content {
     flex-direction: column;
   }

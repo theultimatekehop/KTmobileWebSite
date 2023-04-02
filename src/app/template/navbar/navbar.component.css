@@ -19,7 +19,7 @@ a {
   text-decoration: none;
   color: #ffffff;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 1px;
   font-size: 18px;
 }
 
@@ -41,6 +41,13 @@ span {
 }
 
 .separator {
-  margin-left: 1px;
+  margin-left: 15px;
   margin-right: 15px;
+}
+
+@media (max-width: 767px) {
+  .separator {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
 }

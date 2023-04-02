@@ -1,0 +1,114 @@
+.services-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .services-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .arrow.prev {
+    left: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .arrow.next {
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .services-container {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .service-link {
+    flex: 0 0 33.333%;
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .service-link:hover {
+    text-decoration: underline;
+  }
+  
+ 
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #000000, #4b4320);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    min-height: 270px; // Set a fixed height for the service container (adjust as needed)
+  }
+  
+  .service-image {
+    width: 90%;
+    height: 200px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .service:hover .service-image {
+    transform: scale(1.1);
+  }
+  
+  .service-description {
+    margin-top: 10px;
+    height: 70px; // Set a fixed height for the text container
+    overflow-y: auto; // Make the container scrollable if the content overflows
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 767px) {
+    .service-link {
+      flex: 0 0 100%; // Each slider item takes the full width on mobile devices
+      padding: 10px; // Reduce padding for smaller screens
+    }
+  
+    .service-image {
+      height: 150px; // Adjust image height on mobile devices
+    }
+  
+    .arrow {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+  
