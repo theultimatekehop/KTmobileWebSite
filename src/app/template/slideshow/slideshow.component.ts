@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,16 +18,25 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class SlideshowComponent implements OnInit, OnDestroy {
 
   slides = [
-    { url: 'assets/home-bg.jpg', text: 'Kehop Technologie', text2: 'Second Text 1' },
-    { url: 'assets/intelligence-artificielle-bg.jpg', text: 'Intelligence Artificielle', text2: 'Second Text 2' },
-    { url: 'assets/commercial-bg.jpg', text: 'Services Commercial', text2: 'Second Text 3' },
+    { url: 'assets/home-bg.jpg', text: 'Kehop Technologie', text2: 'Modernisez vous grâces à nos experts', link: '/contactus' },
+    { url: 'assets/intelligence-artificielle-bg.jpg', text: 'Intelligence Artificielle', text2: 'Débloquer la puissance de l\'IA', link: '/ia' },
+    { url: 'assets/commercial-bg.jpg', text: 'Services Commercial', text2: 'Spécialisé en solution commercial', link: '/commercial' },
+    { url: 'assets/residentielle-bg.jpg', text: 'Services Résidentielle', text2: 'Plusieurs services résidentielle', link: '/residential' },
+    { url: 'assets/quebec.jpg', text: 'Entreprise local', text2: 'Aux services des Québécois', link: '/contactus' },
   ];
+  
   
   
 
   currentSlideIndex = 0;
   slideInterval: any;
   isSlideShowRunning = true;
+
+  constructor(private router: Router) { }
+
+  navigateTo(link: string): void {
+    this.router.navigateByUrl(link);
+  }
 
   ngOnInit(): void {
     this.startSlideShow();

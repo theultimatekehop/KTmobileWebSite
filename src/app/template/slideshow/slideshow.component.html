@@ -1,5 +1,5 @@
 <div class="slideshow">
-  <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlideIndex">
+  <div class="slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlideIndex" (click)="navigateTo(slide.link)">
     <img [src]="slide.url" alt="">
     <div class="slide-text">{{slide.text}}</div>
     <span class="slide-text2">{{ slide.text2 }}</span>
@@ -7,8 +7,6 @@
   <button class="arrow prev" (click)="prevSlide()">&#10094;</button>
   <button class="arrow next" (click)="nextSlide()">&#10095;</button>
   <div class="dots">
-    <button *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" [class.stopped]="!isSlideShowRunning" [style.animation]="(i === currentSlideIndex && isSlideShowRunning) ? getProgressBarAnimation(i) : ''" (click)="goToSlide(i)"></button>
-
-
+    <button *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" [class.stopped]="!isSlideShowRunning" [style.animation]="(i === currentSlideIndex && isSlideShowRunning) ? getProgressBarAnimation(i) : ''" (click)="goToSlide(i); $event.stopPropagation()"></button>
   </div>
 </div>

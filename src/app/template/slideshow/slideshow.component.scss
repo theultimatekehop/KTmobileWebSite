@@ -14,16 +14,9 @@
   object-fit: cover;
 }
 
-.slide::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-  pointer-events: none;
-}
+
+
+
 
 
 .arrow {
@@ -90,14 +83,14 @@
 
 
 .dot.active {
-  background-color: black;
+  background: linear-gradient(to right, #000000, #4b4320);
 }
 
 
 
 .dot.active:before {
   animation: progressBar 5s linear;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: black;
 }
 
 .dot.active.stopped:before {
@@ -161,6 +154,10 @@
   opacity: 0;
   font-size: 2rem;
   color: white;
+  max-width: 90%; // Limit the width of the text block
+  background-color: rgba(51, 51, 51, 0.6); // Partially transparent dark grey background
+  padding: 10px; // Add some padding around the text
+  border-radius: 5px; // Round the corners of the background
 }
 
 .slide.active .slide-text2 {
@@ -207,13 +204,18 @@
   }
 
   .slide-text2 {
-    top: 85% !important;
+    top: 80% !important;
     font-size: 1.5rem !important;
     line-height: 1.2 !important;
     left: 50% !important;
-    bottom: 20px !important;
+    
     transform: translateX(-50%) !important;
-    white-space: nowrap !important;
+    max-width: 90% !important; // Limit the width of the text block on mobile
+    background-color: rgba(51, 51, 51, 0.6) !important; // Partially transparent dark grey background on mobile
+    padding: 10px !important; // Add some padding around the text on mobile
+    border-radius: 5px !important; // Round the corners of the background on mobile
+    //make text in center
+    text-align: center;
   }
 
   .slide.active .slide-text2 {
