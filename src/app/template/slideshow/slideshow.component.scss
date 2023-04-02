@@ -14,11 +14,6 @@
   object-fit: cover;
 }
 
-
-
-
-
-
 .arrow {
   position: absolute;
   top: 50%;
@@ -81,12 +76,9 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-
 .dot.active {
   background: linear-gradient(to right, #000000, #4b4320);
 }
-
-
 
 .dot.active:before {
   animation: progressBar 5s linear;
@@ -120,6 +112,7 @@
 
 .slide.active {
   opacity: 1;
+  z-index: 2;
 }
 
 .slide-text {
@@ -169,13 +162,41 @@
     transform: translateY(-10%); // Adjust the starting position of the animation
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
+
+.invisible-button {
+  position: absolute;
+  top: 1%; // 50% of the remaining space is distributed equally to top and bottom
+  left: 5%; // 50% of the remaining space is distributed equally to left and right
+  width: 90%; // 50% of the slide width
+  height: 92%; // 50% of the slide height
+  background: transparent; // Ensure the button is transparent
+
+  border: none;
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
+
+  .invisible-button {
+    position: absolute;
+    top: 1%; // 50% of the remaining space is distributed equally to top and bottom
+    left: 15%; // 50% of the remaining space is distributed equally to left and right
+    width: 70%; // 50% of the slide width
+    height: 90%; // 50% of the slide height
+    background: transparent; // Ensure the button is transparent
+
+    border: none;
+    cursor: pointer;
+  }
+
   .slide-text {
     font-size: 2rem;
     line-height: 1.2;
@@ -184,19 +205,20 @@
     transform: translateX(-50%); // Adjust the horizontal position
     white-space: nowrap;
   }
-  
+
 
   .slide.active .slide-text {
     animation: slideTextMobile 2s ease forwards;
   }
 
-  
+
 
   @keyframes slideTextMobile {
     0% {
       transform: translate(-50%, -20%); // Adjust the starting position of the animation
       opacity: 0;
     }
+
     100% {
       transform: translate(-50%, 0);
       opacity: 1;
@@ -208,7 +230,7 @@
     font-size: 1.5rem !important;
     line-height: 1.2 !important;
     left: 50% !important;
-    
+
     transform: translateX(-50%) !important;
     max-width: 90% !important; // Limit the width of the text block on mobile
     background-color: rgba(51, 51, 51, 0.6) !important; // Partially transparent dark grey background on mobile
@@ -227,10 +249,13 @@
       transform: translate(-50%, 20%); // Adjust the starting position of the animation
       opacity: 0;
     }
+
     100% {
       transform: translate(-50%, 0);
       opacity: 1;
     }
   }
-  
+
 }
+
+

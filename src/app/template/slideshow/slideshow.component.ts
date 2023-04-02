@@ -18,15 +18,12 @@ import { Router } from '@angular/router';
 export class SlideshowComponent implements OnInit, OnDestroy {
 
   slides = [
-    { url: 'assets/home-bg.jpg', text: 'Kehop Technologie', text2: 'Modernisez vous grâces à nos experts', link: '/contactus' },
+    { url: 'assets/home-bg.jpg', text: 'Kehop Technologie', text2: 'Modernisez vous grâces à nos experts', link: 'contactus' },
     { url: 'assets/intelligence-artificielle-bg.jpg', text: 'Intelligence Artificielle', text2: 'Débloquer la puissance de l\'IA', link: '/ia' },
     { url: 'assets/commercial-bg.jpg', text: 'Services Commercial', text2: 'Spécialisé en solution commercial', link: '/commercial' },
     { url: 'assets/residentielle-bg.jpg', text: 'Services Résidentielle', text2: 'Plusieurs services résidentielle', link: '/residential' },
-    { url: 'assets/quebec.jpg', text: 'Entreprise local', text2: 'Aux services des Québécois', link: '/contactus' },
+    { url: 'assets/quebec.jpg', text: 'Entreprise local', text2: 'Aux services des Québécois', link: '/faq' },
   ];
-  
-  
-  
 
   currentSlideIndex = 0;
   slideInterval: any;
@@ -34,7 +31,10 @@ export class SlideshowComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router) { }
 
-  navigateTo(link: string): void {
+  navigateTo(link: string, event: Event): void {
+    console.log('navigateTo' + link);
+    console.log('event' + event);
+    event.stopImmediatePropagation();  // Add this line
     this.router.navigateByUrl(link);
   }
 
@@ -73,8 +73,7 @@ export class SlideshowComponent implements OnInit, OnDestroy {
     //this.stoppedSlides[this.currentSlideIndex] = true;
     this.currentSlideIndex = index;
     this.isSlideShowRunning = false;
-  }
-  
+  } 
 
   getProgressBarAnimation(index: number): string {
     if (index === this.currentSlideIndex && this.isSlideShowRunning) {
@@ -82,6 +81,5 @@ export class SlideshowComponent implements OnInit, OnDestroy {
     }
     return 'none';
   }
-  
   
 }
