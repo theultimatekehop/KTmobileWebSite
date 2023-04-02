@@ -17,10 +17,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class SlideshowComponent implements OnInit, OnDestroy {
 
   slides = [
-    { url: 'assets/home-bg.jpg', text: 'Slide 1' },
-    { url: 'assets/contact-bg.jpg', text: 'Slide 2' },
-    { url: 'assets/home-bg.jpg', text: 'Slide 3' },
+    { url: 'assets/home-bg.jpg', text: 'Kehop Technologie', text2: 'Second Text 1' },
+    { url: 'assets/intelligence-artificielle-bg.jpg', text: 'Intelligence Artificielle', text2: 'Second Text 2' },
+    { url: 'assets/commercial-bg.jpg', text: 'Services Commercial', text2: 'Second Text 3' },
   ];
+  
   
 
   currentSlideIndex = 0;

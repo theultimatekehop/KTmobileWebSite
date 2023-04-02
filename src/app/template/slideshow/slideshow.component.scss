@@ -14,6 +14,18 @@
   object-fit: cover;
 }
 
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+
 .arrow {
   position: absolute;
   top: 50%;
@@ -84,7 +96,7 @@
 
 
 .dot.active:before {
-  animation: progressBar 5s linear ;
+  animation: progressBar 5s linear;
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -96,10 +108,12 @@
   0% {
     left: -100%;
   }
+
   100% {
     left: 0%;
   }
 }
+
 .slide {
   position: absolute;
   top: 0;
@@ -133,8 +147,88 @@
     transform: translateY(-10%); // Adjust the starting position of the animation
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.slide-text2 {
+  position: absolute;
+  left: 5%; // Adjust the distance from the left edge
+  top: 25%; // Adjust the distance from the top edge
+  opacity: 0;
+  font-size: 2rem;
+  color: white;
+}
+
+.slide.active .slide-text2 {
+  animation: slideText2 2s ease forwards;
+}
+
+@keyframes slideText2 {
+  0% {
+    transform: translateY(-10%); // Adjust the starting position of the animation
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-text {
+    font-size: 2rem;
+    line-height: 1.2;
+    left: 50%; // Center the text horizontally
+    top: 2%; // Move the text to the top
+    transform: translateX(-50%); // Adjust the horizontal position
+    white-space: nowrap;
+  }
+  
+
+  .slide.active .slide-text {
+    animation: slideTextMobile 2s ease forwards;
+  }
+
+  
+
+  @keyframes slideTextMobile {
+    0% {
+      transform: translate(-50%, -20%); // Adjust the starting position of the animation
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+  }
+
+  .slide-text2 {
+    top: 85% !important;
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+    left: 50% !important;
+    bottom: 20px !important;
+    transform: translateX(-50%) !important;
+    white-space: nowrap !important;
+  }
+
+  .slide.active .slide-text2 {
+    animation: slideTextMobile2 2s ease forwards;
+  }
+
+  @keyframes slideTextMobile2 {
+    0% {
+      transform: translate(-50%, 20%); // Adjust the starting position of the animation
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+  }
+  
 }

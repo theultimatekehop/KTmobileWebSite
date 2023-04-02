@@ -4,9 +4,15 @@
         <span class="menu-icon"></span>
     </button>
 
-    <div class="logo">
-        <h1>KTmobileWebSite</h1>
-    </div>
+    <div class="logo-container">
+        <!-- Wrap the logo image with an anchor tag and set the routerLink to the home page -->
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="assets/logo.png" alt="Kehop Tech Logo" />
+        </a>
+        <a class="title-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <h1>Kehop Technologie</h1>
+        </a>
+      </div>
 
     <nav class="desktop-menu">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{ 'HOME' | translate}}</a>

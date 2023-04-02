@@ -146,3 +146,25 @@ header {
     padding-top: 2.8rem; 
   }
   
+  .logo-container {
+    display: flex;
+    align-items: center;
+  
+    img {
+      max-height: 1.5rem; // Adjust the height to fit the header size
+      width: auto;
+      margin-right: 0.5rem; // Add some spacing between the logo and the title
+    }
+  
+    .title-link {
+      text-decoration: none;
+      color: white;
+  
+      h1 {
+        font-size: 1.7rem; // Adjust the font size as needed
+        margin: 0;
+        white-space: nowrap;
+      }
+    }
+  }
+  
